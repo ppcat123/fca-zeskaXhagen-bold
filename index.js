@@ -51,6 +51,7 @@ try {
         catch (e) {
             console.log("Invalid Config Settings, Restoring Default...");
             fs.writeFileSync("./FastConfigFca.json", JSON.stringify(ObjFastConfig, null, "\t"));  
+            process.exit(1);
         }
         if (!languageFile.some(i => i.Language == DataLanguageSetting.Language)) { 
             logger("Not Support Language: " + DataLanguageSetting.Language + " Only 'en' and 'vi'","[ FCA-SUS ]");
