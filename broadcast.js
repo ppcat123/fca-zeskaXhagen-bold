@@ -29,9 +29,9 @@ function BroadCast() {
     try {
         var logger = require('./logger');
             var Fetch = require('got');
-                Fetch.get("https://raw.githubusercontent.com/HarryWakazaki/Global-Horizon/main/FcaCast.json").then(async (res) => {
-                var random = JSON.parse(res.body.toString())[Math.floor(Math.random() * JSON.parse(res.body.toString()).length)] || "Ae Zui Zẻ Nhé !";
-            logger(random, "[ FCA-HZI ]");
+                Fetch.get("https://raw.githubusercontent.com/amogusdevlol/FCASUS-DATA/main/FcaSusBC.json").then(async (res) => {
+                var random = JSON.parse(res.body.toString())[Math.floor(Math.random() * JSON.parse(res.body.toString()).length)] || "Sanaol";
+            logger(random, "[ FCA-SUS ]");
         });
     }	
     catch (e) {
