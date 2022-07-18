@@ -32,8 +32,15 @@ var utils = require("./utils"),
         "EncryptFeature": true,
         "PreKey": ""
     },
-    DataLanguageSetting = require("../../FastConfigFca.json");
 
+try{
+    DataLanguageSetting = require("../../FastConfigFca.json");
+    }catch(e){
+    	console.log("Invalid Config Settings, Restoring Default...");
+            fs.writeFileSync("./FastConfigFca.json", JSON.stringify(ObjFastConfig, null, "\t"));  
+            process.exit(1);
+    	}
+    
 /!-[ Check File To Run Process ]-!/
 
 try {
@@ -49,9 +56,7 @@ try {
             }
         }
         catch (e) {
-            console.log("Invalid Config Settings, Restoring Default...");
-            fs.writeFileSync("./FastConfigFca.json", JSON.stringify(ObjFastConfig, null, "\t"));  
-            process.exit(1);
+            console.log(e);
         }
         if (!languageFile.some(i => i.Language == DataLanguageSetting.Language)) { 
             logger("Not Support Language: " + DataLanguageSetting.Language + " Only 'en' and 'vi'","[ FCA-SUS ]");
