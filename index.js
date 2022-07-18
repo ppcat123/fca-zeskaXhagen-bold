@@ -31,7 +31,7 @@ var utils = require("./utils"),
         "BroadCast": true,
         "EncryptFeature": true,
         "PreKey": ""
-    },
+    };
 
 try {
     var DataLanguageSetting = require("../../FastConfigFca.json");
