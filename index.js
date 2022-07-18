@@ -36,7 +36,7 @@ var utils = require("./utils"),
 try {
     var DataLanguageSetting = require("../../FastConfigFca.json");
     } catch(e){
-    	console.log("Invalid Config Settings, Restoring Default...");
+    	logger("Invalid Config Settings, Restoring Default...");
             fs.writeFileSync("./FastConfigFca.json", JSON.stringify(ObjFastConfig, null, "\t"));  
             process.exit(1);
     	}
