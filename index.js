@@ -33,13 +33,6 @@ var utils = require("./utils"),
         "PreKey": ""
     },
 
-try{
-    DataLanguageSetting = require("../../FastConfigFca.json");
-    }catch(e){
-    	console.log("Invalid Config Settings, Restoring Default...");
-            fs.writeFileSync("./FastConfigFca.json", JSON.stringify(ObjFastConfig, null, "\t"));  
-            process.exit(1);
-    	}
     
 /!-[ Check File To Run Process ]-!/
 
@@ -48,6 +41,14 @@ try {
         fs.writeFileSync("./FastConfigFca.json", JSON.stringify(ObjFastConfig, null, "\t"));
         process.exit(1);
     }
+    try {
+    DataLanguageSetting = require("../../FastConfigFca.json");
+    } catch(e){
+    	console.log("Invalid Config Settings, Restoring Default...");
+            fs.writeFileSync("./FastConfigFca.json", JSON.stringify(ObjFastConfig, null, "\t"));  
+            process.exit(1);
+    	}
+
     else if (fs.existsSync('./FastConfigFca.json')) {
         try {
             if (DataLanguageSetting && !DataLanguageSetting.PreKey) {
