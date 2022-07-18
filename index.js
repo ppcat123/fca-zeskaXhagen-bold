@@ -26,7 +26,7 @@ var utils = require("./utils"),
     Client = require("@replit/database"),
     languageFile = require('./Language/index.json'),
     ObjFastConfig = {
-        "Language": "vi",
+        "Language": "en",
         "MainColor": "#9900FF",
         "BroadCast": true,
         "EncryptFeature": true,
@@ -69,7 +69,9 @@ try {
 }
 catch (e) {
     console.log(e);
-    logger.Error();
+    fs.writeFileSync("./FastConfigFca.json", JSON.stringify(ObjFastConfig, null, "\t"));     
+    process.exit(1)
+    //logger.Error();
 }
 
 /!-[ Set Variable For Process ]-!/
