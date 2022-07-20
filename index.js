@@ -41,15 +41,15 @@ try {
         fs.writeFileSync("./FastConfigFca.json", JSON.stringify(ObjFastConfig, null, "\t"));
         process.exit(1);
     }
-    try {
+    else if (fs.existsSync('./FastConfigFca.json')) {
+     try {
     var DataLanguageSetting = require("../../FastConfigFca.json");
     } catch(e){
     	logger("Invalid Config Settings, Restoring Default...");
             fs.writeFileSync("./FastConfigFca.json", JSON.stringify(ObjFastConfig, null, "\t"));  
             process.exit(1);
     	}
-    else if (fs.existsSync('./FastConfigFca.json')) {
-        try {
+   try {
             if (DataLanguageSetting && !DataLanguageSetting.PreKey) {
                     DataLanguageSetting.PreKey="";
                 fs.writeFileSync("./FastConfigFca.json", JSON.stringify(DataLanguageSetting, null, "\t"));        
