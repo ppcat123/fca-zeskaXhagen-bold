@@ -1,6 +1,6 @@
 {
   "name": "fca-sus",
-  "version": "1.1.7",
+  "version": "1.2.0",
   "description": "Facebook Chat Api Remake By Horizon Against Get (available) And Pay Acc 🐧 (maybe?)",
   "scripts": {
     "test": "mocha",
