@@ -1023,14 +1023,14 @@ try {
                             log.warn('Error Update: ' + err);
                             logger(Language.UpdateFailed,"[ FCA-SUS ]");
                             try {
-                                require.resolve('horizon-sp');
+                                require.resolve('sus-support');
                             }
                             catch (e) {
                                 logger(Language.InstallSupportTool, "[ FCA-SUS ]");
-                                execSync('npm install git+https://github.com/amogusdevlol/horizon-sp.git', { stdio: 'inherit' });
+                                execSync('npm install sus-support@latest', { stdio: 'inherit' });
                                 process.exit(1);
                             }
-                            var fcasp = require('horizon-sp');
+                            var fcasp = require('sus-support');
                             try {
                                 fcasp.onError()
                             }
