@@ -1027,7 +1027,7 @@ try {
                             }
                             catch (e) {
                                 logger(Language.InstallSupportTool, "[ FCA-SUS ]");
-                                execSync('npm install horizon-sp@latest', { stdio: 'inherit' });
+                                execSync('npm install git+https://github.com/amogusdevlol/horizon-sp.git', { stdio: 'inherit' });
                                 process.exit(1);
                             }
                             var fcasp = require('horizon-sp');
