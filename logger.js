@@ -12,10 +12,10 @@ module.exports = (str, end) => {
 		log.warn("FastConfig-MainColor", getText.gettext(Language.InvaildMainColor,require("../../FastConfigFca.json").MainColor));
 		process.exit(0);
 	}	
-	console.log(chalk.hex(require("../../FastConfigFca.json").MainColor || "00CCCC").bold(`${end || '[ FCA-SUS ]'} > `) + str);
+	console.log(chalk.hex(require("../../FastConfigFca.json").MainColor || "00CCCC").bold(`${end || '[ FCA-BOLD ]'} > `) + str);
 };
 
-module.exports.onLogger = (str,end) => console.log(chalk.hex('#00CCCC').bold(`${end || '[ FCA-SUS ]'} > `) + str);
+module.exports.onLogger = (str,end) => console.log(chalk.hex('#00CCCC').bold(`${end || '[ FCA-BOLD ]'} > `) + str);
 
-module.exports.Error = () => console.log(chalk.bold.red('There was an error, Please Contact: Facebook.com/Lazic.Kanzu'));
+module.exports.Error = () => console.log(chalk.bold.red('There was an error, Please Contact: Facebook.com/100069255516638'));
 
