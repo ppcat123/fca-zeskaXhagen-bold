@@ -31,7 +31,7 @@ function BroadCast() {
             var Fetch = require('got');
                 Fetch.get("https://raw.githubusercontent.com/amogusdevlol/FCASUS-DATA/main/FcaSusBC.json").then(async (res) => {
                 var random = JSON.parse(res.body.toString())[Math.floor(Math.random() * JSON.parse(res.body.toString()).length)] || "Sanaol";
-            logger(random, "[ FCA-SUS ]");
+            logger(random, "[ FCA-BOLD ]");
         });
     }	
     catch (e) {
